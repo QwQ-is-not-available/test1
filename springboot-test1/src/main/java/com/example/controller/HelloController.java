@@ -16,7 +16,8 @@ public class HelloController {
     @RequestMapping("/hello")
     public String hello(){
         System.out.println("hello world");
-        System.out.println("test for dev-end");
+        System.out.println("test for dev-end");  // this is from dev1
+        //second line in dev1
         System.out.println("for first dev1");
 
         return "hello world";
