@@ -23,7 +23,7 @@ public class HelloController {
 
     @RequestMapping("/simpleParam")
     public String simpleParam(@RequestParam(name="mingzi", required = false) String username, Integer age){
-        System.out.println(username+":"+age);
+        System.out.println(username+":"+age);  //change something in master
         return "OK";
     }
 
