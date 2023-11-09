@@ -16,15 +16,14 @@ public class HelloController {
     @RequestMapping("/hello")
     public String hello(){
         System.out.println("hello world");
-        System.out.println("test for dev");
-        System.out.println("test for dev1");
+        System.out.println("test for dev-end");
 
         return "hello world";
     }
 
     @RequestMapping("/simpleParam")
     public String simpleParam(@RequestParam(name="mingzi", required = false) String username, Integer age){
-        System.out.println(username+":"+age);  //change something in master
+        System.out.println(username+":"+age);  //change something in master-old
         return "OK";
     }
 
