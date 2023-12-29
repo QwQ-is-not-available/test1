@@ -32,9 +32,11 @@ public class EmpController {
             claims.put("username",emp1.getUsername());
 
             String jwt = JwtUtils.generateJwt(claims);
+            log.info("登录成功");
             return Result.success(jwt);
 
         }
+        log.info("登录失败");
         return  Result.error();
     }
 

@@ -39,9 +39,12 @@ class MybatisTest2ApplicationTests {
     public void testParseJWT(){
         Claims claims=Jwts.parser()
                 .setSigningKey("miyao")
-                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidG9tIiwiaWQiOjEsImV4cCI6MTcwMzc4NDkwMn0.l7VxEJV5-RZp0mZj0zJqw__x2KlRa-kChvF148rZgUk")
+                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoidG9tIiwiaWQiOjEsImV4cCI6MTcwMzg1NTc2N30.20FILptMYNOoU04yh7Ah_lS5GF7g-tOpUbKvnDITuuA")
                 .getBody();
         System.out.println(claims);
+        System.out.println(claims.get("id"));
+        System.out.println(claims.get("name"));
+
     }
 
 
