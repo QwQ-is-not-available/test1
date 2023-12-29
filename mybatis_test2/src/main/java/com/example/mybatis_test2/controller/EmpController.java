@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Slf4j
 @RestController
@@ -26,18 +25,24 @@ public class EmpController {
     @PostMapping("/login")
     public Result login(@RequestBody Emp emp){
         Emp emp1=empMapper.login(emp);
-//        if(emp1!=null){
-//            Map<String, Object> claims = new HashMap<>();
-//            claims.put("id",emp1.getId());
-//            claims.put("name",emp1.getName());
-//            claims.put("username",emp1.getUsername());
-//
-//            String jwt = JwtUtils.generateJwt(claims);
-//
-//        }
+        if(emp1!=null){
+            Map<String, Object> claims = new HashMap<>();
+            claims.put("id",emp1.getId());
+            claims.put("name",emp1.getName());
+            claims.put("username",emp1.getUsername());
 
-        return  emp1!=null?Result.success():Result.error();
+            String jwt = JwtUtils.generateJwt(claims);
+            return Result.success(jwt);
+
+        }
+        return  Result.error();
     }
+
+    @PostMapping("/getEmpList")
+    public Result getEmpList(){
+        return Result.success(empMapper.getEmpList());
+    }
+
 
 
 }
