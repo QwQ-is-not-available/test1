@@ -30,7 +30,6 @@ public class EmpController {
             claims.put("id",emp1.getId());
             claims.put("name",emp1.getName());
             claims.put("username",emp1.getUsername());
-            System.out.println("测试!");
 
             String jwt = JwtUtils.generateJwt(claims);
             log.info("登录成功");
