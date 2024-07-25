@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.pojo.Address;
 import com.example.pojo.Result;
 import com.example.pojo.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +12,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @RestController
 public class HelloController {
     @RequestMapping("/hello")
     public String hello(){
         System.out.println("hello world");
+        log.info("hello world");
         System.out.println("test for dev-end");  // this is from dev1 and master
         //second line in dev1
         System.out.println("for first dev1");
+        log.info("for first dev1");
 
         return "hello world";
     }
